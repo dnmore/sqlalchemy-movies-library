@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top">
+        <div class="title">
+          <h1>Movies SQLAlchemy Library</h1>
+          <a href="{{ url_for('add_movie') }}">Add New Movie</a>
+        </div>
+      </div>
+
+      {% if movies == []: %}
+      <div class="content">
+        <div class="card">
+          <p>Library is empty</p>
+        </div>
+      </div>
+
+      {% endif %} {% for movie in movies %}
+
+      <div class="content">
+        <div class="card">
+          <h2>{{ movie.title }}</h2>
+          <p>{{ movie.comment }}</p>
+          <p>{{ movie.rating }}</p>
+          <a href="{{ url_for('delete_movie', id=movie.id ) }}">Delete</a>
+          <a href="{{ url_for('edit_rating', id=movie.id ) }}">Edit Rating</a>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </body>
+  <footer>
+    <p>Made with ❤ by dnmore</p>
+  </footer>
+</html>

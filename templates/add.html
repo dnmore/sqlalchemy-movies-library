@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="top">
+        <div class="title"><h1>Movies SQLAlchemy Library</h1></div>
+      </div>
+      <div class="content">
+        <div class="card">
+
+          <form action="{{ url_for('add_movie') }}" method="post">
+            <div class="form-control">
+              <label>Movie Name</label>
+              <input type="text" name="title" />
+            </div>
+
+            <div class="form-control">
+              <label>Comment</label>
+              <textarea name="comment" rows="10"></textarea>
+            </div>
+
+            <div class="form-control">
+              <label>Rating</label>
+              <input type="text" name="rating" />
+              <button type="submit">Add Movie</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer></footer>
+</html>

@@ -1,0 +1,137 @@
+body {
+  background: #efeff3;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: #212121;
+  font-size: 1rem;
+}
+
+form {
+  width: 30rem;
+  margin: 1rem auto;
+  background-color: white;
+  padding: 1rem;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input,
+textarea {
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  outline: #b8b6b6;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #d1caed;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  font: inherit;
+  border: 1px solid #302f5a;
+  background-color: #302f5a;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  border: 1px solid #7264ac;
+  background-color: #7264ac;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #7264ac;
+  color: white;
+  text-align: center;
+}
+
+.wrapper {
+  position: relative;
+  clear: both;
+  margin: 0 auto 75px auto;
+  width: 100%;
+  overflow: hidden;
+}
+.top {
+  background: #7264ac;
+  height: 12rem;
+  border-top: 20px solid #302f5a;
+}
+
+.top .title {
+  width: 43rem;
+  margin: 38px auto 0 auto;
+}
+
+.title h1 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.title a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #302f5a;
+  background-color: #302f5a;
+  color: #fff;
+}
+
+.title a:hover {
+  border: 1px solid #41406a;
+  background-color: #41406a;
+}
+
+.content {
+  margin: -80px auto 100px;
+  padding-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  padding: 50px;
+  width: 37rem;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 4px rgba(100, 100, 100, 0.4);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.card a {
+  text-decoration: none;
+  color: #7264ac;
+}
+
+.card a:hover {
+  border-bottom: 1px solid #7264ac;
+}
+
+.card a:nth-of-type(2) {
+  margin-left: 10px;
+}
+
+.form-control {
+  display: grid;
+  place-content: center;
+  gap: 10px;
+}

@@ -12,23 +12,30 @@
   <body>
     <div class="wrapper">
       <div class="top">
-        <div class="title"><h1>Movies SQLAlchemy Library</h1></div>
+        <div class="title">
+          <h1>Movies SQLAlchemy Library</h1>
+          <a href="{{ url_for('home')}}">Go Back</a>
+        </div>
       </div>
       <div class="content">
         <div class="card">
-
           <form action="{{ url_for('edit_rating') }}" method="post">
-            <div class="form-control">
-              <p>Movie Name: {{ movie.title }}</p>
-              <p>Current Rating: {{ movie.rating }}</p>
-              <input hidden="hidden" name="id" value="{{ movie.id }}" />
-              <input type="text" name="rating" placeholder="New rating" />
-              <button type="submit">Edit Rating</button>
-            </div>
+            <h2>{{ movie.title }}</h2>
+            <p>Current Rating: {{ movie.rating }}</p>
+            <input hidden="hidden" name="id" value="{{ movie.id }}" />
+
+            <select name="rating">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <button type="submit">Edit Rating</button>
           </form>
         </div>
       </div>
     </div>
   </body>
-  <footer></footer>
+  <footer><p>Made with ❤ by dnmore</p></footer>
 </html>

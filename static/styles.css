@@ -7,7 +7,7 @@ body {
 }
 
 form {
-  width: 30rem;
+  width: 20rem;
   margin: 1rem auto;
   background-color: white;
   padding: 1rem;
@@ -15,12 +15,14 @@ form {
 
 label {
   font-size: 1.2rem;
+  text-align: left;
 }
 
 input,
-textarea {
+textarea,
+select {
   font: inherit;
-  width: 100%;
+  width: 12rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
@@ -42,6 +44,7 @@ button {
   border: 1px solid #302f5a;
   background-color: #302f5a;
   padding: 0.5rem 1.5rem;
+  width: 12rem;
   cursor: pointer;
   color: white;
 }
@@ -79,7 +82,7 @@ footer {
   margin: 38px auto 0 auto;
 }
 
-.title h1 {
+.title h1{
   font-size: 1.5rem;
   color: #fff;
   font-weight: 500;
@@ -132,6 +135,7 @@ footer {
 
 .form-control {
   display: grid;
-  place-content: center;
+  place-items: center;
   gap: 10px;
+  text-align: left;
 }

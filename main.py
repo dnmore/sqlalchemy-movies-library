@@ -1,20 +1,35 @@
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy import Integer, String
 
 app = Flask(__name__)
 
+##CREATE DATABASE
+class Base(DeclarativeBase):
+    pass
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies-collection.db"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
+# Create the extension
+db = SQLAlchemy(model_class=Base)
+# Initialise the app with the extension
+db.init_app(app)
 
 
+##CREATE TABLE
 class Movie(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, unique=True, nullable=False)
-    comment = db.Column(db.String, unique=True, nullable=False)
-    rating = db.Column(db.Float, nullable=False)
+    
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    title: Mapped[str] = mapped_column(String(250), unique=True, nullable=False)
+    comment: Mapped[str] = mapped_column(String(250), nullable=False)
+    rating: Mapped[int] = mapped_column(Integer, nullable=False)
+    
+    
+  
 
-
+# Create table schema in the database.
 with app.app_context():
     db.create_all()
 
@@ -34,6 +49,7 @@ def add_movie():
         new_movie = Movie(title=movie_title, comment=movie_comment, rating=movie_rating)
         db.session.add(new_movie)
         db.session.commit()
+        all_movies = db.session.execute(db.select(Movie)).scalars()
         return redirect(url_for("home"))
     return render_template('add.html')
 

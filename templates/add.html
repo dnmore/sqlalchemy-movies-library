@@ -12,11 +12,12 @@
   <body>
     <div class="wrapper">
       <div class="top">
-        <div class="title"><h1>Movies SQLAlchemy Library</h1></div>
+        <div class="title">
+          <h1>Movies SQLAlchemy Library</h1>
+          <a href="{{ url_for('home')}}">Go Back</a></div>
       </div>
       <div class="content">
         <div class="card">
-
           <form action="{{ url_for('add_movie') }}" method="post">
             <div class="form-control">
               <label>Movie Name</label>
@@ -30,7 +31,14 @@
 
             <div class="form-control">
               <label>Rating</label>
-              <input type="text" name="rating" />
+              <select name="rating">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+
               <button type="submit">Add Movie</button>
             </div>
           </form>
@@ -38,5 +46,5 @@
       </div>
     </div>
   </body>
-  <footer></footer>
+  <footer>  <p>Made with ❤ by dnmore</p></footer>
 </html>
